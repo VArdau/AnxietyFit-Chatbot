@@ -1,0 +1,88 @@
+body {
+  font-family: "Arial", sans-serif;
+  text-align: center;
+  background-image: linear-gradient(to bottom left, #0a5f80 40%, #18a2d8);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Navigation Bar */
+.top-nav {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+
+.top-nav a {
+  text-decoration: none;
+  color: white;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.top-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Container */
+.container {
+  max-width: 500px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+/* Headings */
+h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #c2e0f2;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Information Box */
+.information {
+  width: 90%;
+  max-width: 800px;
+  background: #075473;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+p {
+  font-size: 16px;
+  padding: 10px 15px 10px 15px;
+  line-height: 1.6;
+}
