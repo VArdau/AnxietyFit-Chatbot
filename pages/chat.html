@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat - AnxietyFit</title>
+    <link rel="stylesheet" href="/styles/chat.css" />
+    <script defer src="/styles/chat.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="top-nav">
+      <div class="nav-links">
+        <a href="#">About Us</a> | <a href="#">Safety</a> |
+        <a href="#">Contact Us</a>
+      </div>
+
+      <i class="fa-solid fa-circle-user user-icon" id="UserSlider"></i>
+    </nav>
+    <!-- The Sidebar -->
+    <div id="sidebar" class="sidebar">
+      <a href="#">Account</a>
+      <a href="#">Quiz</a>
+      <a href="index.html">Sign out</a>
+    </div>
+
+    <!-- Chat Container -->
+    <div class="chat-container">
+      <div class="chat-header">
+        <h2>Chat with AnxietyFit</h2>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <!-- Messages will appear here -->
+      </div>
+      <div class="chat-input">
+        <input type="text" id="messageInput" placeholder="Type a message..." />
+        <button id="sendMessage">
+          <i class="fas fa-paper-plane"></i>
+          <!--<i class="fa-solid fa-arrow-up"></i>-->
+        </button>
+      </div>
+    </div>
+    <script>
+      const userSlider = document.getElementById("UserSlider");
+      const sidebar = document.getElementById("sidebar");
+      const content = document.querySelector(".content");
+      const closeSidebarBtn = document.getElementById("closeSidebarBtn");
+
+      // Open the sidebar
+      userSlider.addEventListener("click", function () {
+        sidebar.style.right = "0";
+        content.style.marginRight = "250px";
+      });
+
+      // Close the sidebar
+      document.addEventListener("click", function (event) {
+        if (!sidebar.contains(event.target) && event.target !== userSlider) {
+          sidebar.style.right = "-250px";
+          content.style.marginRight = "0";
+        }
+      });
+    </script>
+  </body>
+</html>

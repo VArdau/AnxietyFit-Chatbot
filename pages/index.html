@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chatbot Welcome Page</title>
+    <title>Welcome Page - AnxietyFit</title>
     <link rel="stylesheet" href="/styles/index.css" />
   </head>
   <body>
@@ -17,8 +17,8 @@
       <h1>Welcome to AnxietyFit</h1>
       <h3>Ease into your gym journey confidently</h3>
       <!--Buttons-->
-      <button>Sign Up</button>
-      <button>Login</button>
+      <button id="signupBttn">Sign Up</button>
+      <button id="loginBttn">Login</button>
     </div>
     <!--Information-->
     <div class="information">
@@ -29,5 +29,17 @@
         for a stress-free fitness journey.
       </p>
     </div>
+    <script>
+      document
+        .getElementById("signupBttn")
+        .addEventListener("click", function () {
+          window.location.href = "signup.html";
+        });
+      document
+        .getElementById("loginBttn")
+        .addEventListener("click", function () {
+          window.location.href = "login.html";
+        });
+    </script>
   </body>
 </html>

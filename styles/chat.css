@@ -1,0 +1,183 @@
+/* General Styles */
+body {
+  font-family: "Arial", sans-serif;
+  text-align: center;
+  background-image: linear-gradient(to bottom left, #0a5f80 40%, #18a2d8);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Navigation Bar */
+.top-nav {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex; /* Enables flexbox */
+  align-items: center; /* Keeps items aligned */
+  justify-content: space-between; /* Pushes the icon to the right */
+  width: 95%; /* Adjust width to span across */
+}
+
+.top-nav a {
+  text-decoration: none;
+  color: white;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.top-nav a:hover {
+  text-decoration: underline;
+}
+
+/* User Icon */
+.user-icon {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Chat Container */
+.chat-container {
+  margin-top: 40px;
+  width: 95%;
+  height: 90vh;
+  max-height: 90vh;
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Chat Header */
+.chat-header {
+  background-color: #0a5f80;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Chat Messages */
+.chat-messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* Individual Messages */
+.message {
+  max-width: 45%;
+  padding: 10px;
+  margin: 5px 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  /*this is to make sure it goes to another line if too long smoothly*/
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+/* User Message */
+.user-message {
+  background-color: #075473;
+  align-self: flex-end;
+  text-align: right;
+}
+
+/* Bot Message */
+.bot-message {
+  background-color: white;
+  color: black;
+  align-self: flex-start;
+  text-align: left;
+}
+
+/* Chat Input */
+.chat-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  background: white;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.chat-input button {
+  background-color: #0a5f80;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.chat-input button:hover {
+  background-color: #075473;
+  transform: scale(1.05);
+}
+
+/* Sidebar */
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  right: -250px;
+  background-color: #0a5f80;
+  padding-top: 60px;
+  transition: 0.3s;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar a {
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #075473;
+}
+
+/* Style for the close button inside the sidebar */
+#closeSidebarBtn {
+  background-color: #075473;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+/* Additional button styling for sidebar */
+#closeSidebarBtn {
+  background-color: #075473;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}

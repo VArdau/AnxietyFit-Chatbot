@@ -1,0 +1,119 @@
+/* General Styles */
+body {
+  font-family: "Arial", sans-serif;
+  text-align: center;
+  background-image: linear-gradient(to bottom left, #0a5f80 40%, #18a2d8);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Form Container */
+.container {
+  max-width: 400px;
+  padding: 50px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  color: black;
+  text-align: left;
+}
+
+/* Headings */
+h1 {
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+}
+
+h2 {
+  margin-top: -10px;
+  font-size: 18px;
+  text-align: center;
+  color: #075473;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 10px 0 5px;
+}
+
+input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+}
+
+button {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #0a5f80;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #075473;
+  transform: scale(1.05);
+}
+
+/* Login Redirect */
+p {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+p a {
+  color: #0a5f80;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+/* Password Input Container */
+.passwordContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Password Input */
+.passwordContainer input {
+  padding-right: 40px; /* Makes space for the icon */
+}
+
+/* Eye Icon */
+.passwordContainer i {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.passwordContainer i:hover {
+  color: #0a5f80;
+}
