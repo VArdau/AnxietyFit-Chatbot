@@ -3,6 +3,17 @@ document.addEventListener("DOMContentLoaded", function () {
   const sendMessageButton = document.getElementById("sendMessage");
   const chatMessages = document.getElementById("chatMessages");
 
+  // Show initial bot welcome message
+  function showBotMessage(text) {
+    const botMessage = document.createElement("div");
+    botMessage.classList.add("message", "bot-message");
+    botMessage.textContent = text;
+    chatMessages.appendChild(botMessage);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  showBotMessage("Hello!"); // speak to people on what it should be
+
   // Function to send a message
   function sendMessage() {
     const messageText = messageInput.value.trim();
@@ -20,26 +31,36 @@ document.addEventListener("DOMContentLoaded", function () {
     // Clear input
     messageInput.value = "";
 
-    // Simulate bot response
-    setTimeout(() => {
-      const botMessage = document.createElement("div");
-      botMessage.classList.add("message", "bot-message");
-      botMessage.textContent = getBotResponse(messageText);
-      chatMessages.appendChild(botMessage);
+    // Fetching bot response from Flask API
+    fetch("http://127.0.0.1:5000/get-response", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ message: messageText }),
+    })
+      .then((response) => {
+        console.log("Raw response:", response);
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Parsed response:", data);
+        const botMessage = document.createElement("div");
+        botMessage.classList.add("message", "bot-message");
+        botMessage.textContent = data.response || "Error: No response text";
+        chatMessages.appendChild(botMessage);
 
-      // Scroll to the bottom
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-    }, 1000);
-  }
-
-  // Bot response
-  function getBotResponse(input) {
-    const responses = {
-      // this is to understand the visuals for now
-      hello: "Hi there! How can I help you?",
-      long: "this is so longggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg and longgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg to see how it looks",
-    };
-    return responses[input.toLowerCase()] || "I'm here to support you!";
+        // Scroll to the bottom
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        const botMessage = document.createElement("div");
+        botMessage.classList.add("message", "bot-message");
+        botMessage.textContent =
+          "Sorry, I'm having trouble right now. Please try again later.";
+        chatMessages.appendChild(botMessage);
+      });
   }
 
   // Event Listeners
